@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>281274003886-m3fj4joi2gd1jo9kpfcmga0hajpb99dq.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.281274003886-m3fj4joi2gd1jo9kpfcmga0hajpb99dq</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDMdo3lQD1H3sIqBIov84fmpdKb9s7MMdk</string>
+	<key>GCM_SENDER_ID</key>
+	<string>281274003886</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.easyNotificationContainer</string>
+	<key>PROJECT_ID</key>
+	<string>hyundai-fcm</string>
+	<key>STORAGE_BUCKET</key>
+	<string>hyundai-fcm.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:281274003886:ios:3cc95ded4057fb0a7a983f</string>
+</dict>
+</plist>

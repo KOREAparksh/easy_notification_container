@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
+import 'firebase_options.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
@@ -58,38 +65,10 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _showCustomNotifcation,
+        onPressed: _incrementCounter,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ),
     );
-  }
-
-  _showCustomNotifcation() async {
-    OverlayState overlayState = Overlay.of(context)!;
-
-    OverlayEntry overlayEntry = OverlayEntry(
-      builder: (context) => Positioned(
-        top: 30,
-        left: 10,
-        right: 10,
-        child: Container(
-          child: Card(
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(
-                'Hello world',
-                style: TextStyle(
-                  fontSize: 15,
-                ),
-              ),
-            ),
-          ),
-        ),
-      ),
-    );
-    overlayState.insert(overlayEntry);
-    await Future.delayed(Duration(seconds: 2));
-    overlayEntry.remove();
   }
 }
