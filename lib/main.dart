@@ -8,6 +8,20 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  // FirebaseMessaging messaging = FirebaseMessaging.instance;
+  FirebaseMessaging.onMessage.listen((RemoteMessage message) {
+    print('Got a message whilst in the foreground!');
+    print('Message data: ${message.data}');
+    print('Message data: ${message.notification?.title}');
+    print('Message data: ${message.notification?.body}');
+    print('Message data: ${message.notification?.bodyLocArgs}');
+    print('Message data: ${message.notification?.bodyLocKey}');
+
+    if (message.notification != null) {
+      print('Message also contained a notification: ${message.notification}');
+    }
+  });
+
   runApp(const MyApp());
 }
 
