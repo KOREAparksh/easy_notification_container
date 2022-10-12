@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "281274003886",
+    "project_id": "hyundai-fcm",
+    "storage_bucket": "hyundai-fcm.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:281274003886:android:b56a742d6b08e1407a983f",
+        "android_client_info": {
+          "package_name": "com.example.easy_notification_container"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "281274003886-q9qhgg4mrco42hh0t81unlrj6pu6iptk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBlBgr3fEfnA8ZZqF7U7PhbHSseciP7Bh4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "281274003886-q9qhgg4mrco42hh0t81unlrj6pu6iptk.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "281274003886-m3fj4joi2gd1jo9kpfcmga0hajpb99dq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.easyNotificationContainer"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
