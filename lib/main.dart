@@ -6,6 +6,30 @@ import 'firebase_options.dart';
 
 String str = "";
 
+Future onBackgroundHandler(RemoteMessage message) async {
+  print('Got a message background!');
+  RemoteNotification? notification = message.notification;
+  // message.notification?.android?.channelId;
+  AndroidNotification? android = message.notification?.android;
+  // if (notification != null && android != null) {
+  //   flutterLocalNotificationsPlugin.show(
+  //       notification.hashCode,
+  //       // 1,
+  //       notification.title,
+  //       notification.body,
+  //       NotificationDetails(
+  //         android: AndroidNotificationDetails(
+  //           channel.id,
+  //           channel.name,
+  //           channelDescription: channel.description,
+  //           icon: android.smallIcon,
+  //           priority: Priority.max,
+  //         ),
+  //       ));
+  // }
+  print("123");
+}
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
@@ -40,10 +64,12 @@ void main() async {
   FirebaseMessaging.onMessage.listen((RemoteMessage message) {
     print('Got a message whilst in the foreground!');
     RemoteNotification? notification = message.notification;
+    // message.notification?.android?.channelId;
     AndroidNotification? android = message.notification?.android;
     if (notification != null && android != null) {
       flutterLocalNotificationsPlugin.show(
           notification.hashCode,
+          // 1,
           notification.title,
           notification.body,
           NotificationDetails(
@@ -52,6 +78,7 @@ void main() async {
               channel.name,
               channelDescription: channel.description,
               icon: android.smallIcon,
+              priority: Priority.max,
             ),
           ));
     }
