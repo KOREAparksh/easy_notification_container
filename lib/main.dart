@@ -6,6 +6,30 @@ import 'firebase_options.dart';
 
 String str = "";
 
+Future onBackgroundHandler(RemoteMessage message) async {
+  print('Got a message background!');
+  RemoteNotification? notification = message.notification;
+  // message.notification?.android?.channelId;
+  AndroidNotification? android = message.notification?.android;
+  // if (notification != null && android != null) {
+  //   flutterLocalNotificationsPlugin.show(
+  //       notification.hashCode,
+  //       // 1,
+  //       notification.title,
+  //       notification.body,
+  //       NotificationDetails(
+  //         android: AndroidNotificationDetails(
+  //           channel.id,
+  //           channel.name,
+  //           channelDescription: channel.description,
+  //           icon: android.smallIcon,
+  //           priority: Priority.max,
+  //         ),
+  //       ));
+  // }
+  print("123");
+}
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
@@ -44,25 +68,18 @@ void main() async {
     AndroidNotification? android = message.notification?.android;
     if (notification != null && android != null) {
       flutterLocalNotificationsPlugin.show(
-          // notification.hashCode,
-          1,
+          notification.hashCode,
+          // 1,
           notification.title,
           notification.body,
           NotificationDetails(
-            android: AndroidNotificationDetails(channel.id, channel.name,
-                channelDescription: channel.description,
-                icon: android.smallIcon,
-                priority: Priority.max,
-                styleInformation: MessagingStyleInformation(
-                  Person(important: true, name: "123123", key: "@@@@"),
-                  conversationTitle: "conversation",
-                  messages: [
-                    Message("m1", DateTime.now(),
-                        Person(important: true, name: "123123", key: "@@@@")),
-                    Message("m2", DateTime.now(),
-                        Person(important: true, name: "345345", key: "@@@@"))
-                  ],
-                )),
+            android: AndroidNotificationDetails(
+              channel.id,
+              channel.name,
+              channelDescription: channel.description,
+              icon: android.smallIcon,
+              priority: Priority.max,
+            ),
           ));
     }
   });
