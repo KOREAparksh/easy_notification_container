@@ -40,19 +40,29 @@ void main() async {
   FirebaseMessaging.onMessage.listen((RemoteMessage message) {
     print('Got a message whilst in the foreground!');
     RemoteNotification? notification = message.notification;
+    // message.notification?.android?.channelId;
     AndroidNotification? android = message.notification?.android;
     if (notification != null && android != null) {
       flutterLocalNotificationsPlugin.show(
-          notification.hashCode,
+          // notification.hashCode,
+          1,
           notification.title,
           notification.body,
           NotificationDetails(
-            android: AndroidNotificationDetails(
-              channel.id,
-              channel.name,
-              channelDescription: channel.description,
-              icon: android.smallIcon,
-            ),
+            android: AndroidNotificationDetails(channel.id, channel.name,
+                channelDescription: channel.description,
+                icon: android.smallIcon,
+                priority: Priority.max,
+                styleInformation: MessagingStyleInformation(
+                  Person(important: true, name: "123123", key: "@@@@"),
+                  conversationTitle: "conversation",
+                  messages: [
+                    Message("m1", DateTime.now(),
+                        Person(important: true, name: "123123", key: "@@@@")),
+                    Message("m2", DateTime.now(),
+                        Person(important: true, name: "345345", key: "@@@@"))
+                  ],
+                )),
           ));
     }
   });
